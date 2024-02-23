@@ -1,7 +1,7 @@
 //Importar un Button en mayúsculas, en automático está referenciando a un estilo de materialUI
 // Si se importa el botón como "@mui/material/Button", según el elemento cargaría mas rápido en fase de desarrollo
 
-import { Button, Container, Typography } from "@mui/material"
+import { Box, Button, Container, Typography } from "@mui/material"
 
 function App() {
   return (
@@ -39,6 +39,20 @@ function App() {
       </Typography>
     
       <Button variant="contained">Mi primer botón</Button>
+
+
+      <Box 
+        // p = padding
+        sx={{
+          border: 2, 
+          p: 1.5,
+          borderColor: "peru",
+          bgcolor: "#111",
+          color: "white",
+          }}>
+        Esto es un box
+      </Box>
+
     </Container>
   )
 }
