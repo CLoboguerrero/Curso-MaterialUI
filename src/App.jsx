@@ -1,7 +1,7 @@
 //Importar un Button en mayúsculas, en automático está referenciando a un estilo de materialUI
 // Si se importa el botón como "@mui/material/Button", según el elemento cargaría mas rápido en fase de desarrollo
 
-import { Button, Container } from "@mui/material"
+import { Button, Container, Typography } from "@mui/material"
 
 function App() {
   return (
@@ -10,7 +10,34 @@ function App() {
     // Con el atributo "sx" se pueden definir propiedades de CSS:
     // pb = padding-button. 
     <Container sx={{border: 2, boxShadow: 3, pb: 2}}>
-      <h1>App</h1>
+      <Typography 
+        variant="h1" 
+        gutterBottom >
+          Título H1
+      </Typography>
+
+      <Typography 
+        variant="h1" 
+        gutterBottom 
+        component="h2">
+          Título H2 que se comporta como H1
+      </Typography>
+
+      <Typography 
+        variant="h2" 
+        gutterBottom 
+        component="span">
+          Título H2 que se comporta como un span
+      </Typography>
+
+      <Typography 
+        variant="body1" 
+        textAlign="center"
+        //En este caso, el margin-top se multiplica por 8px que es el valor por defecto del tema:
+        mt={5}>
+          Otro Título con propiedad CSS
+      </Typography>
+    
       <Button variant="contained">Mi primer botón</Button>
     </Container>
   )
