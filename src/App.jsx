@@ -2,6 +2,7 @@
 // Si se importa el botón como "@mui/material/Button", según el elemento cargaría mas rápido en fase de desarrollo
 
 import { Box, Button, Container, Typography } from "@mui/material"
+import ExtensionRoundedIcon from '@mui/icons-material/ExtensionRounded';
 
 function App() {
   return (
@@ -30,7 +31,8 @@ function App() {
           Título H2 que se comporta como un span
       </Typography>
 
-      <Typography 
+      <Typography
+        color="primary"
         variant="body1" 
         textAlign="center"
         //En este caso, el margin-top se multiplica por 8px que es el valor por defecto del tema:
@@ -40,6 +42,13 @@ function App() {
     
       <Button variant="contained">Mi primer botón</Button>
 
+      <Button variant="contained" color="error">Otro Botón</Button>
+
+      <Button variant="contained" color="success">Otro Botón Más!</Button>
+
+      <Button variant="outlined" color="success">Un Botón Outlined</Button>
+
+      <Button variant="outlined" color="success" startIcon={<ExtensionRoundedIcon />}>Botón con Iconito!</Button>
 
       <Box 
         // p = padding
