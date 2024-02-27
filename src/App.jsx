@@ -1,7 +1,8 @@
 //Importar un Button en mayúsculas, en automático está referenciando a un estilo de materialUI
 // Si se importa el botón como "@mui/material/Button", según el elemento cargaría mas rápido en fase de desarrollo
 
-import { Box, Button, Container, Typography } from "@mui/material"
+import { Box, Button, Container, Typography } from "@mui/material";
+import Grid from "@mui/material/Grid";
 import ExtensionRoundedIcon from '@mui/icons-material/ExtensionRounded';
 
 function App() {
@@ -61,6 +62,45 @@ function App() {
           }}>
         Esto es un box
       </Box>
+
+      {/* Implementación de GRID: */}
+
+      <Grid container spacing={5}>
+
+          <Grid 
+            item 
+            xs={12}
+            sm={6}
+            md={4}
+          >
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea saepe sed, mollitia architecto illo odio. Commodi, vitae? Vel quis dolor veniam, quibusdam deserunt nemo explicabo itaque omnis laboriosam odio perspiciatis.
+              </p>
+          </Grid>
+
+          <Grid 
+            item 
+            xs={12}
+            sm={6}
+            md={4}
+          >
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea saepe sed, mollitia architecto illo odio. Commodi, vitae? Vel quis dolor veniam, quibusdam deserunt nemo explicabo itaque omnis laboriosam odio perspiciatis.
+              </p>
+          </Grid>
+
+          <Grid 
+            item 
+            xs={12}
+            sm={6}
+            md={4}
+          >
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea saepe sed, mollitia architecto illo odio. Commodi, vitae? Vel quis dolor veniam, quibusdam deserunt nemo explicabo itaque omnis laboriosam odio perspiciatis.
+              </p>
+          </Grid>
+
+      </Grid>
 
     </Container>
   )
