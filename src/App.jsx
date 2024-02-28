@@ -4,6 +4,7 @@
 import { Box, Button, Container, Typography } from "@mui/material";
 import Grid from "@mui/material/Grid";
 import ExtensionRoundedIcon from '@mui/icons-material/ExtensionRounded';
+import Product from "./Components/Product";
 
 function App() {
   return (
@@ -101,6 +102,8 @@ function App() {
           </Grid>
 
       </Grid>
+
+      <Product />
 
     </Container>
   )
