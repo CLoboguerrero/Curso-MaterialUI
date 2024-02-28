@@ -6,8 +6,7 @@ const NavListDrawer = () => {
     return (
         <Box 
             sx={{
-                width: 250,
-                bgcolor: "lightsalmon"
+                width: 500,
             }}
         >
             <nav>
