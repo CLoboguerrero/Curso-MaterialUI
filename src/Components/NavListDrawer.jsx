@@ -2,55 +2,70 @@ import { Box, Divider, List, ListItem, ListItemButton, ListItemIcon, ListItemTex
 import InboxIcon from "@mui/icons-material/Inbox";
 import DraftsIcon from "@mui/icons-material/Drafts";
 
-const NavListDrawer = () => {
-    return (
-        <Box 
-            sx={{
-                width: 500,
-            }}
-        >
-            <nav>
-                <List>
-                    <ListItem>
-                        <ListItemIcon>
-                            <InboxIcon />
-                        </ListItemIcon>
-                        <ListItemText primary="Inbox"/>
-                    </ListItem>
+const NavListDrawer = ({ navLinks }) => {
+	return (
+		<Box 
+			sx={{
+					width: 250,
+			}}
+		>
 
-                    <ListItem>
-                        <ListItemIcon>
-                            <DraftsIcon />
-                        </ListItemIcon>
-                        <ListItemText primary="Drafts"/>
-                    </ListItem>
-                </List>
-            </nav>
+			{
+				navLinks.map(item => (
+					<ListItem disablePadding key={item.title}>
+						<ListItemButton 
+							component="a"  // component = a es un ANCHOR!!!!
+							href={item.path}
+							>
+							<ListItemIcon>{item.icon}</ListItemIcon>
+							<ListItemText>{item.title}</ListItemText>
+						</ListItemButton>
+					</ListItem>
+				))
+			}
 
-            <Divider />
+			{/* <nav>
+				<List>
+					<ListItem>
+						<ListItemIcon>
+							<InboxIcon />
+						</ListItemIcon>
+						<ListItemText primary="Inbox"/>
+					</ListItem>
 
-            <nav>
-                <List>
-                    <ListItem disablePadding>
-                        <ListItemButton 
-                            component="a"  // component = a es un ANCHOR!!!!
-                            href="#trash"
-                        >
-                            <ListItemText>Trash</ListItemText>
-                        </ListItemButton>
-                    </ListItem>
-                </List>
+					<ListItem>
+						<ListItemIcon>
+							<DraftsIcon />
+						</ListItemIcon>
+						<ListItemText primary="Drafts"/>
+					</ListItem>
+				</List>
+			</nav>
 
-                <ListItem disablePadding>
-                        <ListItemButton 
-                            component="a"  // component = a es un ANCHOR!!!!
-                            href="#trash"
-                        >
-                            <ListItemText>Spam</ListItemText>
-                        </ListItemButton>
-                    </ListItem>
-            </nav>
-        </Box>
+			<Divider /> */}
+
+			{/* <nav>
+				<List>
+					<ListItem disablePadding>
+						<ListItemButton 
+							component="a"  // component = a es un ANCHOR!!!!
+							href="#trash"
+						>
+							<ListItemText>Trash</ListItemText>
+						</ListItemButton>
+					</ListItem>
+				</List>
+
+				<ListItem disablePadding>
+					<ListItemButton 
+						component="a"  // component = a es un ANCHOR!!!!
+						href="#trash"
+					>
+						<ListItemText>Spam</ListItemText>
+					</ListItemButton>
+				</ListItem>
+			</nav> */}
+		</Box>
   )
 }
 

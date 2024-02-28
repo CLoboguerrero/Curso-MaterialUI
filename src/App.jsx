@@ -15,8 +15,10 @@ function App() {
     // Con el atributo "sx" se pueden definir propiedades de CSS:
     // pb = padding-button. 
 
+    <>
+    <NavBar />
+
     <Container sx={{border: 2, boxShadow: 3, pb: 2}}>
-      <NavBar />
       
       <Typography 
         variant="h1" 
@@ -112,6 +114,9 @@ function App() {
       <BlueCard />
 
     </Container>
+    
+    </>
+
   )
 }
 
