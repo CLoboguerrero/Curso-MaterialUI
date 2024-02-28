@@ -6,6 +6,7 @@ import Grid from "@mui/material/Grid";
 import ExtensionRoundedIcon from '@mui/icons-material/ExtensionRounded';
 import Product from "./Components/Product";
 import BlueCard from "./Components/BlueCard";
+import NavBar from "./Components/NavBar";
 
 function App() {
   return (
@@ -13,7 +14,10 @@ function App() {
     // Importante recordar que estamos trabajando con un componente de react usando JS, por lo que las propiedades de estilos siempre van en camelCase. Ver la documentación de MUI.
     // Con el atributo "sx" se pueden definir propiedades de CSS:
     // pb = padding-button. 
+
     <Container sx={{border: 2, boxShadow: 3, pb: 2}}>
+      <NavBar />
+      
       <Typography 
         variant="h1" 
         gutterBottom >
