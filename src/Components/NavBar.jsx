@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { NavLink } from "react-router-dom";
 import { Box } from "@mui/system";
 import { AppBar, Button, Drawer, IconButton, Toolbar, Typography } from '@mui/material';
 import NavListDrawer from "./NavListDrawer";
@@ -7,27 +8,27 @@ import InboxIcon from "@mui/icons-material/Inbox";
 import DraftsIcon from "@mui/icons-material/Drafts";
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 
-const NavBar = () => {
+const NavBar = ({ navLinks }) => {
 
-    const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(false);
     
-    const navLinks = [
-      {
-        title: "Home", 
-        path: "#", 
-        icon: <InboxIcon />
-      },
-      {
-        title: "Login", 
-        path: "#login", 
-        icon: <DraftsIcon />
-      },
-      {
-        title: "Register", 
-        path: "#register", 
-        icon: <AddCircleOutlineIcon />
-      }
-    ]
+    // const navLinks = [
+    //   {
+    //     title: "Home", 
+    //     path: "#", 
+    //     icon: <InboxIcon />
+    //   },
+    //   {
+    //     title: "Login", 
+    //     path: "#login", 
+    //     icon: <DraftsIcon />
+    //   },
+    //   {
+    //     title: "Register", 
+    //     path: "#register", 
+    //     icon: <AddCircleOutlineIcon />
+    //   }
+    // ]
 
   return (
     <>
@@ -50,8 +51,11 @@ const NavBar = () => {
                 <Button 
                   color="inherit" 
                   key={item.title}
-                  component="a"
-                  href={item.path}
+                  //OJO: Cuando tenemos otras rutas (y no anclas), los atributos component y href cambian respecto a la dependencia de react-router-dom 
+                  // component="a"
+                  // href={item.path}
+                  component={NavLink}
+                  to={item.path}
                 >
                   {item.title}
                 </Button>
@@ -70,7 +74,11 @@ const NavBar = () => {
         onClose={() => setOpen(false)}
         sx={{ display: {xs:"flex", sm:"none"} }}
       >
-        <NavListDrawer navLinks={navLinks}/>
+        <NavListDrawer 
+          navLinks={navLinks} 
+          NavLink={NavLink}
+          setOpen={setOpen}
+        />
       </Drawer>
     </>
   ) 

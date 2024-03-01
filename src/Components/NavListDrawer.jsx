@@ -2,7 +2,7 @@ import { Box, Divider, List, ListItem, ListItemButton, ListItemIcon, ListItemTex
 import InboxIcon from "@mui/icons-material/Inbox";
 import DraftsIcon from "@mui/icons-material/Drafts";
 
-const NavListDrawer = ({ navLinks }) => {
+const NavListDrawer = ({ navLinks, NavLink, setOpen }) => {
 	return (
 	<Box 
 		sx={{
@@ -14,8 +14,12 @@ const NavListDrawer = ({ navLinks }) => {
 			navLinks.map(item => (
 				<ListItem disablePadding key={item.title}>
 					<ListItemButton 
-						component="a"  // component = a es un ANCHOR!!!!
-						href={item.path}
+            //OJO para cuando se usa React-Router-DOM no se una un ancla!
+						//component="a"  // component = a es un ANCHOR!!!!
+            //href={item.path}
+            component={NavLink}
+						to={item.path}
+            onClick={() => setOpen(false)}
 						>
 						<ListItemIcon>{item.icon}</ListItemIcon>
 						<ListItemText>{item.title}</ListItemText>

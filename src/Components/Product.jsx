@@ -10,7 +10,7 @@ const Product = () => {
 		objectFit: "cover",
 		objectPosition: "center",
 	})
-
+  
 	return (
 		<Paper
 				sx={{
