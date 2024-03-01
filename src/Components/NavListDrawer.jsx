@@ -4,25 +4,25 @@ import DraftsIcon from "@mui/icons-material/Drafts";
 
 const NavListDrawer = ({ navLinks }) => {
 	return (
-		<Box 
-			sx={{
-					width: 250,
-			}}
-		>
+	<Box 
+		sx={{
+				width: 250,
+		}}
+	>
 
-			{
-				navLinks.map(item => (
-					<ListItem disablePadding key={item.title}>
-						<ListItemButton 
-							component="a"  // component = a es un ANCHOR!!!!
-							href={item.path}
-							>
-							<ListItemIcon>{item.icon}</ListItemIcon>
-							<ListItemText>{item.title}</ListItemText>
-						</ListItemButton>
-					</ListItem>
-				))
-			}
+		{
+			navLinks.map(item => (
+				<ListItem disablePadding key={item.title}>
+					<ListItemButton 
+						component="a"  // component = a es un ANCHOR!!!!
+						href={item.path}
+						>
+						<ListItemIcon>{item.icon}</ListItemIcon>
+						<ListItemText>{item.title}</ListItemText>
+					</ListItemButton>
+				</ListItem>
+			))
+		}
 
 			{/* <nav>
 				<List>
