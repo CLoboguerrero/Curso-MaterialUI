@@ -1,10 +1,43 @@
-import React from 'react'
-import { Container, Typography } from '@mui/material'
+import React, { useState } from 'react';
+import { Alert, AlertTitle, Container, Typography, Box, Button, Collapse } from '@mui/material';
 
 const Home = () => {
+
+  const [open, setOpen] = useState(true);
+
   return (
     <>
       <h1>Home</h1>
+
+      {/* Recordar que BOX nos permite trabajar con CSS */}
+
+      <Box sx={{ display: "grid", gap: "1rem" }}>
+        <Alert severity="success">
+          <AlertTitle>Success</AlertTitle>
+          This is a success Alert.
+        </Alert>
+
+        <Alert severity="info">This is an info Alert.</Alert>
+
+        <Alert 
+          severity="warning" 
+          action={<Button color='inherit'>Delete</Button>}
+        >
+          <AlertTitle>Warning</AlertTitle>
+          This is a warning Alert.
+        </Alert>
+
+        <Collapse in={open}>
+          <Alert 
+            severity="error"
+            onClose={() => {setOpen(false)}}
+          >
+            This is an error Alert.
+          </Alert>
+        </Collapse>
+
+      </Box>
+
 
       <Typography 
         variant="h1" 
