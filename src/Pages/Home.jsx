@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { Alert, AlertTitle, Container, Typography, Box, Button, Collapse } from '@mui/material';
+import { Alert, AlertTitle, Container, Typography, Box, Button, Collapse, Snackbar } from '@mui/material';
 import AddAlertIcon from '@mui/icons-material/AddAlert';
 
 const Home = () => {
 
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
 
   return (
     <>
@@ -40,6 +40,14 @@ const Home = () => {
           </Alert>
         </Collapse>
 
+        <Button variant='contained' onClick={() => {setOpen(true)}}>OPEN</Button>
+
+        <Snackbar open={open} autoHideDuration={2000} onClose={() => setOpen(false)}>
+          <Alert severity="success">
+            <AlertTitle>Success</AlertTitle>
+            This is a success Alert.
+          </Alert>
+        </Snackbar>
       </Box>
 
 

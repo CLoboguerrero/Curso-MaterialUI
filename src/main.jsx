@@ -12,6 +12,7 @@ import '@fontsource/roboto/700.css';
 
 import './index.css'
 import { CssBaseline, ThemeProvider, createTheme } from '@mui/material';
+import { SnackbarProvider } from 'notistack';
 
 //Importante usar para que MUI se aplique en TODO el proyecto (Importarlo en un componente si sólo se requiere ahí):
 //Temas de MUI:
@@ -34,8 +35,10 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
       <BrowserRouter>
-        <CssBaseline />
-        <App />
+        <SnackbarProvider maxSnack={3} autoHideDuration={3000}>
+          <CssBaseline />
+          <App />
+        </SnackbarProvider>
       </BrowserRouter>
     </ThemeProvider>
   </React.StrictMode>,
