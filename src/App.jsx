@@ -43,111 +43,17 @@ function App() {
     // pb = padding-button. 
 
     <>
-    <NavBar navLinks={navLinks} />
+      <NavBar navLinks={navLinks} />
 
-    <Container sx={{border: 2, boxShadow: 3, pb: 2}}>
+      <Container sx={{border: 2, boxShadow: 3, pb: 2}}>
 
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-      </Routes>
-      
-      <Typography 
-        variant="h1" 
-        gutterBottom >
-          Título H1
-      </Typography>
-
-      <Typography 
-        variant="h1" 
-        gutterBottom 
-        component="h2">
-          Título H2 que se comporta como H1
-      </Typography>
-
-      <Typography 
-        variant="h2" 
-        gutterBottom 
-        component="span">
-          Título H2 que se comporta como un span
-      </Typography>
-
-      <Typography
-        color="primary"
-        variant="body1" 
-        textAlign="center"
-        //En este caso, el margin-top se multiplica por 8px que es el valor por defecto del tema:
-        mt={5}>
-          Otro Título con propiedad CSS
-      </Typography>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+        </Routes>
     
-      <Button variant="contained">Mi primer botón</Button>
-
-      <Button variant="contained" color="error">Otro Botón</Button>
-
-      <Button variant="contained" color="success">Otro Botón Más!</Button>
-
-      <Button variant="outlined" color="success">Un Botón Outlined</Button>
-
-      <Button variant="outlined" color="success" startIcon={<ExtensionRoundedIcon />}>Botón con Iconito!</Button>
-
-      <Box 
-        // p = padding
-        sx={{
-          border: 2, 
-          p: 1.5,
-          borderColor: "peru",
-          bgcolor: "#111",
-          color: "white",
-          }}>
-        Esto es un box
-      </Box>
-
-      {/* Implementación de GRID: */}
-
-      <Grid container spacing={5}>
-
-          <Grid 
-            item 
-            xs={12}
-            sm={6}
-            md={4}
-          >
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea saepe sed, mollitia architecto illo odio. Commodi, vitae? Vel quis dolor veniam, quibusdam deserunt nemo explicabo itaque omnis laboriosam odio perspiciatis.
-              </p>
-          </Grid>
-
-          <Grid 
-            item 
-            xs={12}
-            sm={6}
-            md={4}
-          >
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea saepe sed, mollitia architecto illo odio. Commodi, vitae? Vel quis dolor veniam, quibusdam deserunt nemo explicabo itaque omnis laboriosam odio perspiciatis.
-              </p>
-          </Grid>
-
-          <Grid 
-            item 
-            xs={12}
-            sm={6}
-            md={4}
-          >
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea saepe sed, mollitia architecto illo odio. Commodi, vitae? Vel quis dolor veniam, quibusdam deserunt nemo explicabo itaque omnis laboriosam odio perspiciatis.
-              </p>
-          </Grid>
-
-      </Grid>
-
-      <Product />
-      <BlueCard />
-
-    </Container>
-    
+      </Container>
     </>
 
   )
