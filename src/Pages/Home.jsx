@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Alert, AlertTitle, Container, Typography, Box, Button, Collapse } from '@mui/material';
+import AddAlertIcon from '@mui/icons-material/AddAlert';
 
 const Home = () => {
 
@@ -12,16 +13,19 @@ const Home = () => {
       {/* Recordar que BOX nos permite trabajar con CSS */}
 
       <Box sx={{ display: "grid", gap: "1rem" }}>
+
         <Alert severity="success">
           <AlertTitle>Success</AlertTitle>
           This is a success Alert.
         </Alert>
 
-        <Alert severity="info">This is an info Alert.</Alert>
+        {/* Añadir un custom icon a la alerta: */}
+        <Alert severity="info" icon={<AddAlertIcon />} variant='outlined'>This is an info Alert.</Alert>
 
         <Alert 
           severity="warning" 
           action={<Button color='inherit'>Delete</Button>}
+          variant='filled'
         >
           <AlertTitle>Warning</AlertTitle>
           This is a warning Alert.
