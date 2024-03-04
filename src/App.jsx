@@ -11,6 +11,7 @@ import NavBar from "./Components/NavBar";
 import Home from "./Pages/Home";
 import Login from "./Pages/Login";
 import Register from "./Pages/Register";
+import Contact from "./Pages/Contact";
 
 import InboxIcon from "@mui/icons-material/Inbox";
 import DraftsIcon from "@mui/icons-material/Drafts";
@@ -33,6 +34,13 @@ function App() {
       title: "Register", 
       path: "/register", 
       icon: <AddCircleOutlineIcon />
+      
+    },
+    {
+      title: "Contact", 
+      path: "/contact", 
+      icon: <AddCircleOutlineIcon />
+      
     }
   ]
 
@@ -51,6 +59,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
     
       </Container>
