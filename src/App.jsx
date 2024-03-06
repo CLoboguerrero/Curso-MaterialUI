@@ -12,6 +12,7 @@ import Home from "./Pages/Home";
 import Login from "./Pages/Login";
 import Register from "./Pages/Register";
 import Contact from "./Pages/Contact";
+import WeatherApp from "./Pages/WeatherApp";
 
 import InboxIcon from "@mui/icons-material/Inbox";
 import DraftsIcon from "@mui/icons-material/Drafts";
@@ -41,6 +42,12 @@ function App() {
       path: "/contact", 
       icon: <AddCircleOutlineIcon />
       
+    },
+    {
+      title: "Weather", 
+      path: "/weather", 
+      icon: <AddCircleOutlineIcon />
+      
     }
   ]
 
@@ -60,6 +67,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/weather" element={<WeatherApp />} />
         </Routes>
     
       </Container>
